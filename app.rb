@@ -20,8 +20,7 @@ end
 
 get '/janken' do
   userHand = params["hand"]
-  compHands = ["guu", "choki", "paa"]
-  compHand = compHands.sample
+  compHand = ["guu", "choki", "paa"].sample
  
   if (userHand == "guu" && compHand == "choki") || (userHand == "choki" && compHand == "paa") || (userHand == "paa" && compHand == "guu")
     "I am #{compHand}. You are #{userHand}. You win.\n"
