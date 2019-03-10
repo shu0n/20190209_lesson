@@ -21,12 +21,14 @@ end
 get '/janken' do
   userHand = params["hand"]
   compHand = ["guu", "choki", "paa"].sample
- 
-  if (userHand == "guu" && compHand == "choki") || (userHand == "choki" && compHand == "paa") || (userHand == "paa" && compHand == "guu")
+
+  if userHand != "guu" && userHand != "choki" && userHand != "paa"
+    "You are wrong! Type again.\n" 
+  elsif (userHand == "guu" && compHand == "choki") || (userHand == "choki" && compHand == "paa") || (userHand == "paa" && compHand == "guu")
     "I am #{compHand}. You are #{userHand}. You win.\n"
   elsif (userHand == "guu" && compHand == "paa") || (userHand == "choki" && compHand == "guu") || (userHand == "paa" && compHand == "choki")
     "I am #{compHand}. You are #{userHand}. You lose.\n"
   else
-    "Draw!"
+    "Draw!\n"
   end
 end
