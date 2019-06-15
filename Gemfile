@@ -10,3 +10,4 @@ gem 'puma'
 gem "sinatra-activerecord"
 gem "pg"
 gem "rake"
+gem "pry"
