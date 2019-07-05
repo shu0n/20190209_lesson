@@ -1,7 +1,16 @@
+require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/reloader'
+require "sinatra/activerecord"
+require './model/user'
 
 register Sinatra::Reloader
+
+set :database,
+  adapter: "postgresql", 
+  database: "janken_development", 
+  user: "janken", 
+  password: 'password'
 
 get '/' do
   p request.env
